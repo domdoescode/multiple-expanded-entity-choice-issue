@@ -1,0 +1,11 @@
+<form action="" method="post" {{ form_enctype(form) }}>
+    {{ form_errors(form) }}
+    {{ form_rest(form) }}
+    <input type="submit" />
+</form>
+
+<ul>
+{% for product in products %}
+  <li>{{ product.name }}{% if product.category %} ({{ product.category.name }}){% endif %}</li>
+{% endfor %}
+</ul>
